@@ -145,25 +145,25 @@
             };
 
       document.body.appendChild(script);
+    </script>
+    <script>
+      function showUnityInputOverlay(placeholder, gameObjectName, callbackMethod) {
+        var input = document.getElementById('unityInputOverlay');
+        if (!input) return;
 
-    function showUnityInputOverlay(placeholder, gameObjectName, callbackMethod) {
-      var input = document.getElementById('unityInputOverlay');
-      if (!input) return;
+        input.placeholder = placeholder || "Enter text...";
+        input.value = "";
+        input.style.display = "block";
 
-      input.placeholder = placeholder || "Enter text...";
-      input.value = "";
-      input.style.display = "block";
+        // Important: focus as soon as possible
+        setTimeout(() => input.focus(), 10);
 
-      // Important: focus as soon as possible
-      setTimeout(() => input.focus(), 10);
-
-      input.onblur = function() {
-        var text = input.value;
-        window.unityInstance.SendMessage(gameObjectName, callbackMethod, text);
-        input.style.display = "none";
-      };
-    }
-
+        input.onblur = function() {
+          var text = input.value;
+          window.unityInstance.SendMessage(gameObjectName, callbackMethod, text);
+          input.style.display = "none";
+        };
+      }
     </script>
   </body>
 </html>
