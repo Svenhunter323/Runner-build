@@ -146,17 +146,6 @@
 
       document.body.appendChild(script);
 
-createUnityInstance(document.querySelector("#unity-canvas"), {
-      dataUrl: "%UNITY_DATA_URL%",
-      frameworkUrl: "%UNITY_FRAMEWORK_URL%",
-      codeUrl: "%UNITY_CODE_URL%",
-      companyName: "%UNITY_COMPANY_NAME%",
-      productName: "%UNITY_PRODUCT_NAME%",
-      productVersion: "%UNITY_PRODUCT_VERSION%"
-    }).then((instance) => {
-      window.unityInstance = instance;
-    });
-
     function showUnityInputOverlay(placeholder, gameObjectName, callbackMethod) {
       var input = document.getElementById('unityInputOverlay');
       if (!input) return;
