@@ -6,7 +6,7 @@
     <title>Unity WebGL Player | Runner</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
-<style>
+    <style>
 #unityInputOverlay {
       display: none;
       position: absolute;
@@ -28,7 +28,7 @@
   <body>
     <div id="unity-container" class="unity-desktop">
       <canvas id="unity-canvas" width=960 height=600 tabindex="-1"></canvas>
-<!-- The real HTML input overlay -->
+      <!-- The real HTML input overlay -->
   <input id="unityInputOverlay" type="text" placeholder="Enter text..." />
       <div id="unity-loading-bar">
         <div id="unity-logo"></div>
@@ -145,7 +145,9 @@
             };
 
       document.body.appendChild(script);
+
     </script>
+        </script>
     <script>
       function showUnityInputOverlay(placeholder, gameObjectName, callbackMethod) {
         var input = document.getElementById('unityInputOverlay');
